@@ -5,7 +5,6 @@ with source as (
 
 renamed as (
     select
-        concat(id,username) as unique_id,
         id,
         username as user_name,
         name,
