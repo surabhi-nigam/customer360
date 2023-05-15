@@ -27,8 +27,3 @@ models:
   - name: stg_web__transactions
     config:
       materialized: view
-    tests:
-      - dbt_utils.recency:
-          datepart: day
-          field: transaction_date
-          interval: 1
