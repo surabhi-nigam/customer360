@@ -27,9 +27,8 @@ models:
   - name: stg_web__transactions
     config:
       materialized: view
-    columns:
-      - name: contact_id
-        tests:
-          - relationships:
-              to: ref('stg_sf__contacts')
-              field: id
+    tests:
+      - dbt_utils.recency:
+          datepart: day
+          field: transaction_date
+          interval: 1
