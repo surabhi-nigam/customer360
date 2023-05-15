@@ -4,6 +4,11 @@ sources:
   - name: web 
     config:
       enabled: true
+    freshness:
+      warn_after:
+        count: 1
+        period: day
+    loaded_at_field: _loaded_at_utc
     database: dbt  
     schema: public 
     tables:
