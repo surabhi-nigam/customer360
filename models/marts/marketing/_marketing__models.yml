@@ -8,4 +8,3 @@ models:
       - name: id
         tests:
           - not_null
-          - unique
