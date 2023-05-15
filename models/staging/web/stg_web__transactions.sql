@@ -12,7 +12,8 @@ renamed as (
         item_count,
         category, 
         _loaded_at_utc
-    from source     
+    from source   
+    where DATE_PART('day', timezone('utc',now()) - {{ as_timestamp_utc('transaction_date') }})<1  
 )
 
 select * from renamed

@@ -18,3 +18,18 @@ sources:
             tests:
               - accepted_values:
                   values: ['Apps & Games', 'Beauty', 'Books', 'Clothing, Shoes & Accessories', 'Movies & TV', 'Sports, Fitness & Outdoors','Kitchen']
+          - name: contact_id
+            tests:
+              - relationships:
+                  to: ref('stg_sf__contacts')
+                  field: id
+models:
+  - name: stg_web__transactions
+    config:
+      materialized: view
+    columns:
+      - name: contact_id
+        tests:
+          - relationships:
+              to: ref('stg_sf__contacts')
+              field: id
