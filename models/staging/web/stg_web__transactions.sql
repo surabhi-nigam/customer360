@@ -12,7 +12,8 @@ renamed as (
         item_count,
         category, 
         _loaded_at_utc
-    from source     
+    from source   
+    
 )
 
 select * from renamed
